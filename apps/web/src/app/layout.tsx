@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: 'Digital Invite | Luxury Digital Invitation Cards',
   description: 'Design and purchase premium, high-quality digital invitation cards for weddings, birthdays, and elite events.',
 };
-
+// test
 export default function RootLayout({
   children,
 }: {
