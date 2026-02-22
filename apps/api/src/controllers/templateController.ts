@@ -73,3 +73,43 @@ export const deleteTemplate = async (req: Request, res: Response) => {
   }
 };
 
+export const seedTemplates = async (req: Request, res: Response) => {
+    try {
+        const templatesData = [
+            {
+              title: 'Royal Wedding',
+              category: 'wedding',
+              type: 'image',
+              price: 999,
+              previewUrl: 'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&q=80&w=800',
+              sourceUrl: 'wedding_royal.html',
+              isPremium: true
+            },
+            {
+              title: 'Modern Birthday',
+              category: 'birthday',
+              type: 'image',
+              price: 499,
+              previewUrl: 'https://images.unsplash.com/photo-1530103043960-ef38714abb15?auto=format&fit=crop&q=80&w=800',
+              sourceUrl: 'birthday_modern.html',
+              isPremium: false
+            },
+            {
+              title: 'Traditional Mundan',
+              category: 'mundan',
+              type: 'image',
+              price: 599,
+              previewUrl: 'https://images.unsplash.com/photo-1544133782-99092490cc9d?auto=format&fit=crop&q=80&w=800',
+              sourceUrl: 'mundan_traditional.html',
+              isPremium: false
+            }
+        ];
+        
+        await Template.deleteMany({});
+        const seeded = await Template.insertMany(templatesData);
+        res.json({ message: 'Templates seeded successfully', count: seeded.length });
+    } catch (error: any) {
+        res.status(500).json({ message: error.message });
+    }
+};
+
