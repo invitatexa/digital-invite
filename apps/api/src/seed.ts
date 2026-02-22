@@ -7,30 +7,30 @@ dotenv.config();
 const templates = [
   {
     title: 'Royal Wedding',
-    description: 'Gold-themed traditional Indian wedding invitation.',
     category: 'wedding',
+    type: 'image',
     price: 999,
-    thumbnailUrl: 'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&q=80&w=800',
+    previewUrl: 'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&q=80&w=800',
     sourceUrl: 'wedding_royal.html',
-    isActive: true
+    isPremium: true
   },
   {
     title: 'Modern Birthday',
-    description: 'Clean and colorful geometric design for birthdays.',
     category: 'birthday',
+    type: 'image',
     price: 499,
-    thumbnailUrl: 'https://images.unsplash.com/photo-1530103043960-ef38714abb15?auto=format&fit=crop&q=80&w=800',
+    previewUrl: 'https://images.unsplash.com/photo-1530103043960-ef38714abb15?auto=format&fit=crop&q=80&w=800',
     sourceUrl: 'birthday_modern.html',
-    isActive: true
+    isPremium: false
   },
   {
     title: 'Traditional Mundan',
-    description: 'Auspicious design for Mundan ceremonies.',
     category: 'mundan',
+    type: 'image',
     price: 599,
-    thumbnailUrl: 'https://images.unsplash.com/photo-1544133782-99092490cc9d?auto=format&fit=crop&q=80&w=800',
+    previewUrl: 'https://images.unsplash.com/photo-1544133782-99092490cc9d?auto=format&fit=crop&q=80&w=800',
     sourceUrl: 'mundan_traditional.html',
-    isActive: true
+    isPremium: false
   }
 ];
 

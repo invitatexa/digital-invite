@@ -2,13 +2,14 @@
   "name": "@digital-invite/api",
   "version": "1.0.0",
   "private": true,
+  "type": "module",
   "main": "dist/index.js",
   "scripts": {
     "dev": "ts-node-dev --respawn --transpile-only src/index.ts",
     "build": "tsc",
     "start": "node dist/index.js",
     "lint": "eslint src/**/*.ts",
-    "seed": "ts-node src/seed.ts"
+    "seed": "NODE_OPTIONS='--loader ts-node/esm --no-warnings' ts-node src/seed.ts"
   },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.995.0",
