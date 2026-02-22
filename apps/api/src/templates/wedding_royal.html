@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --primary: #83272d;
+        --accent: #d4af37;
+        --text: #ffffff;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+        background: #000;
+        font-family: "Playfair Display", serif;
+      }
+      .wrapper {
+        width: 1000px;
+        height: 1400px;
+        background:
+          linear-gradient(
+            rgba(var(--primary-rgb, 131, 39, 45), var(--bg-opacity, 0.9)),
+            rgba(var(--primary-rgb, 131, 39, 45), var(--bg-opacity, 0.95))
+          ),
+          url("https://images.unsplash.com/photo-1595814521369-15d787796d8f?auto=format&fit=crop&q=80&w=1000");
+        background-size: cover;
+        border: 20px solid var(--accent);
+        box-sizing: border-box;
+        color: var(--text);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+      .ornament {
+        width: 300px;
+        opacity: 0.8;
+        margin-bottom: 20px;
+      }
+      h1 {
+        font-family: "Great Vibes", cursive;
+        font-size: 100px;
+        color: var(--accent);
+        margin: 0;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      }
+      .subtitle {
+        font-size: 24px;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        margin: 20px 0;
+      }
+      .names {
+        font-size: 60px;
+        font-weight: bold;
+        margin: 30px 0;
+        color: var(--accent);
+      }
+      .details {
+        font-size: 28px;
+        line-height: 1.6;
+        max-width: 600px;
+      }
+      .date-box {
+        border-top: 2px solid var(--accent);
+        border-bottom: 2px solid var(--accent);
+        padding: 20px 0;
+        margin: 40px 0;
+        width: 400px;
+      }
+      .venue {
+        font-style: italic;
+        font-size: 22px;
+        margin-top: 20px;
+      }
+      .footer {
+        position: absolute;
+        bottom: 40px;
+        font-size: 18px;
+        letter-spacing: 2px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <img
+        src="https://cdnt.invitation-card.com/static/img/ornament-top.png"
+        class="ornament"
+        onerror="this.style.display = 'none'"
+      />
+      <div class="subtitle">The Wedding of</div>
+      <div class="names">{{NAME_A}} & {{NAME_B}}</div>
+      <div class="details">
+        We cordially invite you to join us as we celebrate our union and start
+        our new life together.
+      </div>
+      <div class="date-box">
+        <div style="font-size: 32px; font-weight: bold">{{DATE}}</div>
+        <div style="font-size: 20px; margin-top: 5px">{{TIME}}</div>
+      </div>
+      <div class="venue">
+        <strong>Venue:</strong><br />
+        {{VENUE}}<br />
+        <span style="font-size: 16px">{{MAPS_LINK}}</span>
+      </div>
+      <div class="footer">PLEASE RSVP BY {{RSVP_DATE}}</div>
+    </div>
+  </body>
+</html>

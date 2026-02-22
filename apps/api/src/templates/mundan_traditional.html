@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Karma:wght@400;700&family=Yesteryear&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --primary: #f59e0b;
+        --secondary: #dc2626;
+        --bg: #fffbf0;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: "Karma", serif;
+        background: #ccc;
+      }
+      .wrapper {
+        width: 1000px;
+        height: 1400px;
+        background: var(--bg);
+        border: 25px solid var(--primary);
+        box-sizing: border-box;
+        color: #333;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 80px;
+        text-align: center;
+        position: relative;
+      }
+      .header-motifs {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        margin-bottom: 40px;
+      }
+      .motif {
+        width: 120px;
+        height: 120px;
+        background: var(--primary);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        font-size: 40px;
+      }
+      h1 {
+        font-family: "Yesteryear", cursive;
+        font-size: 80px;
+        color: var(--secondary);
+        margin: 20px 0;
+      }
+      .intro {
+        font-size: 24px;
+        color: #666;
+        font-style: italic;
+        margin-bottom: 30px;
+      }
+      .kid-name {
+        font-size: 70px;
+        font-weight: bold;
+        color: var(--primary);
+        margin: 20px 0;
+        border-bottom: 5px double var(--primary);
+        padding-bottom: 15px;
+      }
+      .event-details {
+        font-size: 30px;
+        line-height: 1.5;
+        margin: 40px 0;
+        background: rgba(245, 158, 11, 0.1);
+        padding: 30px;
+        border-radius: 20px;
+        width: 100%;
+      }
+      .time-location {
+        font-size: 26px;
+        font-weight: bold;
+        color: var(--secondary);
+      }
+      .parents {
+        font-size: 22px;
+        margin-top: 50px;
+        color: #444;
+      }
+      .swastik {
+        font-size: 60px;
+        color: var(--secondary);
+        margin: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="swastik">卐</div>
+      <div class="intro">With the blessings of Almighty</div>
+      <h1>Mundan Ceremony</h1>
+      <div class="intro">
+        We request the pleasure of your company at the Tonsure Ceremony of our
+        beloved son
+      </div>
+      <div class="kid-name">{{KID_NAME}}</div>
+
+      <div class="event-details">
+        <div style="margin-bottom: 15px">On {{DATE}}</div>
+        <div class="time-location">At {{TIME}}</div>
+        <div style="margin-top: 15px; font-size: 24px">{{VENUE}}</div>
+      </div>
+
+      <div class="parents">
+        Invited by:<br />
+        <strong style="font-size: 28px">{{HOST_NAME}}</strong><br />
+        & Entire Family
+      </div>
+
+      <div style="margin-top: 60px; opacity: 0.3">
+        <img
+          src="https://cdnt.invitation-card.com/static/img/elephant.png"
+          width="200"
+          onerror="this.style.display = 'none'"
+        />
+      </div>
+    </div>
+  </body>
+</html>

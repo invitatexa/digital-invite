@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;700&family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --primary: #ff85a2;
+        --secondary: #ffb3c6;
+        --accent: #ff4d6d;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: "Fredoka", sans-serif;
+        background: var(--primary, #f0f0f0);
+      }
+      .wrapper {
+        width: 1000px;
+        height: 1400px;
+        background: #fff;
+        border: 30px solid var(--secondary);
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 60px;
+        text-align: center;
+        background-image: radial-gradient(
+          var(--secondary) 2px,
+          transparent 2px
+        );
+        background-size: 40px 40px;
+      }
+      .card-inner {
+        background: #fff;
+        width: 100%;
+        height: 100%;
+        border-radius: 40px;
+        padding: 40px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      h1 {
+        font-family: "Pacifico", cursive;
+        font-size: 90px;
+        color: var(--accent);
+        margin: 20px 0;
+        transform: rotate(-3deg);
+      }
+      .age-badge {
+        background: var(--accent);
+        color: #fff;
+        font-size: 40px;
+        padding: 10px 30px;
+        border-radius: 50px;
+        margin: 20px 0;
+        font-weight: bold;
+      }
+      .description {
+        font-size: 28px;
+        color: #555;
+        margin: 30px 0;
+        max-width: 700px;
+      }
+      .birthday-boy {
+        font-size: 80px;
+        font-weight: bold;
+        color: var(--primary);
+        margin: 20px 0;
+      }
+      .details-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+        width: 80%;
+        margin-top: 50px;
+      }
+      .detail-item {
+        background: var(--secondary);
+        padding: 20px;
+        border-radius: 20px;
+        font-size: 24px;
+      }
+      .venue {
+        grid-column: span 2;
+      }
+      .balloons {
+        position: absolute;
+        top: -50px;
+        right: -50px;
+        width: 300px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="card-inner">
+        <div class="age-badge">Turning {{AGE}}!</div>
+        <h1>Birthday Party</h1>
+        <div class="description">
+          Join us for a day of fun, cake, and laughter as we celebrate
+        </div>
+        <div class="birthday-boy">{{NAME}}</div>
+
+        <div class="details-grid">
+          <div class="detail-item"><strong>DATE</strong><br />{{DATE}}</div>
+          <div class="detail-item"><strong>TIME</strong><br />{{TIME}}</div>
+          <div class="detail-item venue">
+            <strong>WHERE</strong><br />{{VENUE}}
+          </div>
+        </div>
+
+        <div class="description" style="margin-top: 60px">
+          RSVP to {{HOST_NAME}}<br />
+          {{PHONE}}
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

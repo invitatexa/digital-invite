@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Invitation Card</title>
+    <style>
+      body {
+        font-family: "Georgia", serif;
+        background: #fff;
+        margin: 0;
+        padding: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+      }
+      .card {
+        width: 600px;
+        border: 15px solid #4f46e5;
+        padding: 50px;
+        text-align: center;
+        background: #fffaf0;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      }
+      h1 {
+        color: #1e1b4b;
+        font-size: 48px;
+        margin-bottom: 10px;
+      }
+      .subtitle {
+        font-style: italic;
+        color: #666;
+        margin-bottom: 40px;
+      }
+      .details {
+        margin-bottom: 40px;
+      }
+      .details p {
+        margin: 10px 0;
+        font-size: 20px;
+        color: #333;
+      }
+      .footer {
+        margin-top: 50px;
+        font-weight: bold;
+        color: #4f46e5;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <h1>{{TITLE}}</h1>
+      <div class="subtitle">You're cordially invited to celebrate with us</div>
+
+      <div class="details">
+        <p><strong>Host:</strong> {{HOST}}</p>
+        <p><strong>Date:</strong> {{DATE}}</p>
+        <p><strong>Venue:</strong> {{VENUE}}</p>
+      </div>
+
+      <div class="footer">Looking forward to seeing you!</div>
+    </div>
+  </body>
+</html>

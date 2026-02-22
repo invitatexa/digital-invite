@@ -1,0 +1,21 @@
+{
+  "name": "digital-invite-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Digital Invitation Card Platform Monorepo",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspaces --if-present",
+    "build": "npm run build --workspaces --if-present",
+    "start": "npm run start --workspaces --if-present",
+    "lint": "npm run lint --workspaces --if-present"
+  },
+  "devDependencies": {
+    "typescript": "^5.x",
+    "prettier": "^3.x",
+    "eslint": "^8.x"
+  }
+}
