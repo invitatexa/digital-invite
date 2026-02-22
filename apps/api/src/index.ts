@@ -10,6 +10,7 @@ import eventRoutes from './routes/eventRoutes.js';
 import templateRoutes from './routes/templateRoutes.js';
 import orderRoutes from './routes/orderRoutes.js';
 import userRoutes from './routes/userRoutes.js';
+import { seedTemplates } from './controllers/templateController.js';
 import { errorHandler } from './middleware/error.js';
 
 dotenv.config();
@@ -46,6 +47,8 @@ const mountRoutes = (router: express.Router | any) => {
 };
 
 mountRoutes(app);
+
+app.get('/setup-database', seedTemplates);
 
 app.get('/', (req, res) => {
   res.json({ message: 'Digital Invite API is running' });
