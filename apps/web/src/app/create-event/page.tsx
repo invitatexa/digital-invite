@@ -41,8 +41,10 @@ export default function CreateEventPage() {
       const { eventType, ...eventData } = data;
       const res = await api.post('/events', { eventType, eventData });
       router.push(`/templates?eventId=${res.data._id}`);
-    } catch (error) {
-      alert('Failed to create event');
+    } catch (error: any) {
+      console.error('Event creation failed:', error);
+      const errorMsg = error.response?.data?.message || 'Failed to create event. Please check your connection.';
+      alert(errorMsg);
     }
   };
 

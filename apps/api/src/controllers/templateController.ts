@@ -17,7 +17,7 @@ export const createTemplate = async (req: Request, res: Response) => {
     const templateData = req.body;
     const template = new Template(templateData);
     await template.save();
-    res.status(211).json(template);
+    res.status(201).json(template);
   } catch (error: any) {
     res.status(500).json({ message: error.message });
   }

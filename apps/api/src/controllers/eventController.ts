@@ -9,7 +9,7 @@ export const createEvent = async (req: Request, res: Response) => {
     const event = new Event({ userId, eventType, eventData });
     await event.save();
 
-    res.status(211).json(event);
+    res.status(201).json(event);
   } catch (error: any) {
     res.status(500).json({ message: error.message });
   }
