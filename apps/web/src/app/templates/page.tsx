@@ -6,7 +6,7 @@ import api from '@/lib/api';
 import Link from 'next/link';
 import { ITemplate } from '@digital-invite/types';
 import { Sparkles, Palette, ArrowRight, Star, CheckCircle2 } from 'lucide-react';
-
+// test
 function TemplatesContent() {
   const [templates, setTemplates] = useState<ITemplate[]>([]);
   const [loading, setLoading] = useState(true);
