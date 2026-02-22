@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Force rebuild for Vercel */
+
 @layer base {
   :root {
     --primary: #4f46e5;
