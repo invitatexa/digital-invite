@@ -1,12 +1,12 @@
 "use client";
 
-import React, { useEffect, useState, useCallback } from 'react';
+import React, { useEffect, useState, useCallback, Suspense } from 'react';
 import { useParams, useSearchParams, useRouter } from 'next/navigation';
 import api from '@/lib/api';
 import { ITemplate, IEvent } from '@digital-invite/types';
 import { Palette, Type, Save, CheckCircle2, RotateCcw, Download, Sparkles, Layout, ChevronLeft } from 'lucide-react';
 
-export default function TemplatePreviewPage() {
+function TemplatePreviewContent() {
   const { id } = useParams();
   const searchParams = useSearchParams();
   const router = useRouter();
@@ -329,4 +329,12 @@ export default function TemplatePreviewPage() {
       <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
     </div>
   );
+}
+
+export default function TemplatePreviewPage() {
+    return (
+        <Suspense fallback={<div className="p-12 text-center text-xl animate-pulse font-black text-gray-300 uppercase tracking-widest">Waking Design Hub...</div>}>
+            <TemplatePreviewContent />
+        </Suspense>
+    );
 }

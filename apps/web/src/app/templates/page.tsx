@@ -1,13 +1,13 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import api from '@/lib/api';
 import Link from 'next/link';
 import { ITemplate } from '@digital-invite/types';
 import { Sparkles, Palette, ArrowRight, Star, CheckCircle2 } from 'lucide-react';
 
-export default function TemplatesPage() {
+function TemplatesContent() {
   const [templates, setTemplates] = useState<ITemplate[]>([]);
   const [loading, setLoading] = useState(true);
   const searchParams = useSearchParams();
@@ -147,5 +147,13 @@ export default function TemplatesPage() {
       </div>
     </div>
   );
+}
+
+export default function TemplatesPage() {
+    return (
+        <Suspense fallback={<div className="p-12 text-center text-xl animate-pulse font-black text-gray-300 uppercase tracking-widest">Opening Gallery...</div>}>
+            <TemplatesContent />
+        </Suspense>
+    );
 }
 
