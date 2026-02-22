@@ -2,9 +2,24 @@ import fs from 'fs';
 import path from 'path';
 
 export const getInviteHtml = (data: any, templateFile: string = 'wedding_royal.html', customizations: any = {}) => {
-  const templatePath = path.join(__dirname, `../templates/${templateFile}`);
-  if (!fs.existsSync(templatePath)) {
-    return `<h1>Template ${templateFile} not found</h1>`;
+  // Robust path resolution for Vercel
+  const possiblePaths = [
+    path.join(process.cwd(), 'apps/api/src/templates', templateFile),
+    path.join(process.cwd(), 'src/templates', templateFile),
+    path.join(__dirname, `../templates/${templateFile}`),
+    path.join(__dirname, `../../src/templates/${templateFile}`)
+  ];
+
+  let templatePath = '';
+  for (const p of possiblePaths) {
+      if (fs.existsSync(p)) {
+          templatePath = p;
+          break;
+      }
+  }
+
+  if (!templatePath) {
+    return `<h1>Template ${templateFile} not found</h1> <p>Search paths tried: ${possiblePaths.join(', ')}</p>`;
   }
   let html = fs.readFileSync(templatePath, 'utf-8');
   
