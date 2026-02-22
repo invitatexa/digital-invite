@@ -30,11 +30,22 @@ mongoose.connect(MONGODB_URI)
   .catch(err => console.error('MongoDB connection error:', err));
 
 // Routes
-app.use('/api/auth', authRoutes);
-app.use('/api/events', eventRoutes);
-app.use('/api/templates', templateRoutes);
-app.use('/api/orders', orderRoutes);
-app.use('/api/users', userRoutes);
+const mountRoutes = (router: express.Router | any) => {
+  app.use('/auth', authRoutes);
+  app.use('/events', eventRoutes);
+  app.use('/templates', templateRoutes);
+  app.use('/orders', orderRoutes);
+  app.use('/users', userRoutes);
+  
+  // Also support /api prefix for backward compatibility/standardization
+  app.use('/api/auth', authRoutes);
+  app.use('/api/events', eventRoutes);
+  app.use('/api/templates', templateRoutes);
+  app.use('/api/orders', orderRoutes);
+  app.use('/api/users', userRoutes);
+};
+
+mountRoutes(app);
 
 app.get('/', (req, res) => {
   res.json({ message: 'Digital Invite API is running' });
